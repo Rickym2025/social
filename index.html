@@ -12,7 +12,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SocialEngine | Caroselli Social AI ad Alta Conversione in 40 Secondi</title>
     <meta name="description" content="Smetti di sprecare 4 ore su Canva. Inserisci il link del tuo sito: l'AI estrae i colori del tuo brand, scrive testi persuasivi e genera caroselli di 5 slide pronti per LinkedIn e Instagram.">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    
+    <!-- Favicon & Icone -->
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./logo_social.png">
+
+    <!-- Open Graph (WhatsApp, LinkedIn, Telegram) -->
+    <meta property="og:title" content="SocialEngine | Caroselli Social AI in 40 Secondi">
+    <meta property="og:description" content="Genera caroselli grafici e copy persuasivo partendo semplicemente dall'URL del tuo sito.">
+    <meta property="og:image" content="./logo_social.png">
+    <meta property="og:type" content="website">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -28,8 +39,36 @@
     </script>
     <style>
         body { background-color: #030308; color: #f4f4f5; font-family: 'Inter', sans-serif; font-size: 16px; }
-        .glass-panel { backdrop-filter: blur(12px); background: rgba(8, 8, 14, 0.94); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-panel { backdrop-filter: blur(16px); background: rgba(8, 8, 14, 0.88); border: 1px solid rgba(255, 255, 255, 0.08); }
         .glow-neon { text-shadow: 0 0 25px rgba(99, 102, 241, 0.55), 0 0 35px rgba(139, 92, 246, 0.35); }
+
+        /* KEYFRAMES ANIMAZIONE GRADIENTE FLUIDO */
+        @keyframes floatSlow1 {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(60px, -80px) scale(1.15); }
+            66% { transform: translate(-50px, 40px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        @keyframes floatSlow2 {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(-70px, 60px) scale(1.1); }
+            66% { transform: translate(40px, -50px) scale(0.95); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.35; transform: scale(1); }
+            50% { opacity: 0.65; transform: scale(1.2); }
+        }
+
+        .animate-mesh-1 {
+            animation: floatSlow1 18s ease-in-out infinite alternate;
+        }
+        .animate-mesh-2 {
+            animation: floatSlow2 22s ease-in-out infinite alternate;
+        }
+        .animate-mesh-3 {
+            animation: pulseGlow 12s ease-in-out infinite alternate;
+        }
     </style>
     <script type="application/ld+json">
     {
@@ -44,15 +83,30 @@
 </head>
 <body class="antialiased min-h-screen flex flex-col overflow-x-hidden relative">
 
+    <!-- SFONDO GRADIENTE DINAMICO ANIMATO -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+        <!-- Mesh 1 (Indigo Superiore Sinistra) -->
+        <div class="absolute -top-[15%] -left-[10%] w-[650px] md:w-[850px] h-[650px] md:h-[850px] rounded-full bg-gradient-to-br from-indigo-600/25 via-indigo-500/10 to-transparent blur-[140px] animate-mesh-1"></div>
+        
+        <!-- Mesh 2 (Violet / Fucsia Inferiore Destra) -->
+        <div class="absolute top-[35%] -right-[15%] w-[600px] md:w-[800px] h-[600px] md:h-[800px] rounded-full bg-gradient-to-tl from-fuchsia-600/20 via-violet-600/15 to-transparent blur-[150px] animate-mesh-2"></div>
+        
+        <!-- Mesh 3 (Smeraldo / Ciano Centro) -->
+        <div class="absolute bottom-[-10%] left-[25%] w-[500px] md:w-[700px] h-[500px] md:h-[700px] rounded-full bg-gradient-to-t from-emerald-500/10 via-indigo-500/10 to-transparent blur-[160px] animate-mesh-3"></div>
+
+        <!-- Pattern griglia a punti ultra-sottile -->
+        <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:32px_32px] opacity-40"></div>
+    </div>
+
     <!-- NAVBAR -->
-    <header class="fixed top-0 left-0 w-full p-4 md:p-5 z-50 backdrop-blur-md bg-black/60 border-b border-white/10">
+    <header class="fixed top-0 left-0 w-full p-4 md:p-5 z-50 backdrop-blur-xl bg-black/50 border-b border-white/10">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="#" class="flex items-center gap-2.5">
-                <span class="w-3.5 h-3.5 rounded-full bg-indigo-500 shadow-[0_0_12px_#6366f1] animate-pulse"></span>
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="./logo_social.png" alt="SocialEngine AI Logo" class="w-8 h-8 object-contain rounded-lg transition-transform group-hover:scale-105">
                 <span class="font-display font-black tracking-wider text-lg uppercase text-white">SocialEngine <span class="text-indigo-400">AI</span></span>
             </a>
 
-            <div class="hidden lg:flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1 text-xs">
+            <div class="hidden lg:flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1 text-xs backdrop-blur-md">
                 <span class="text-zinc-500 font-semibold px-2">Ecosistema RM:</span>
                 <a href="https://drivemotion.rmstudio.app" target="_blank" class="text-zinc-400 hover:text-indigo-400 px-2 py-0.5 rounded-full hover:bg-white/5 transition">DriveMotion</a>
                 <a href="https://hometour.rmstudio.app" target="_blank" class="text-zinc-400 hover:text-indigo-400 px-2 py-0.5 rounded-full hover:bg-white/5 transition">HomeTour</a>
@@ -72,7 +126,7 @@
         <!-- HERO SECTION -->
         <section class="min-h-screen flex flex-col items-center justify-center px-6 pt-36 pb-20 text-center">
             <div class="max-w-4xl mx-auto space-y-8">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs font-bold uppercase tracking-widest">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs font-bold uppercase tracking-widest backdrop-blur-md shadow-inner">
                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Generatore di Caroselli AI in 40 Secondi
                 </div>
                 
@@ -88,18 +142,18 @@
                 </p>
 
                 <!-- DEMO GENERATOR BOX -->
-                <div id="demo" class="w-full max-w-lg mx-auto p-8 bg-zinc-950 rounded-[2.5rem] text-left border-2 border-indigo-500/50 shadow-[0_0_50px_rgba(99,102,241,0.2)] relative">
+                <div id="demo" class="w-full max-w-lg mx-auto p-8 bg-zinc-950/90 backdrop-blur-2xl rounded-[2.5rem] text-left border-2 border-indigo-500/50 shadow-[0_0_60px_rgba(99,102,241,0.25)] relative">
                     <h3 class="text-xl font-bold text-white mb-2">Crea il tuo Carosello di Prova</h3>
                     <p class="text-xs text-zinc-400 mb-6 leading-relaxed">Inserisci il sito web della tua attività: l&apos;AI genererà l&apos;anteprima grafica con la palette coordinata.</p>
 
                     <div class="space-y-4">
                         <div>
                             <label class="block text-xs uppercase font-black tracking-widest text-zinc-300 mb-2">1. URL del tuo Sito Web</label>
-                            <input type="url" id="site-url" placeholder="https://www.tuosito.com" class="w-full bg-black border border-zinc-700 text-white rounded-xl px-4 py-3.5 text-sm outline-none focus:border-indigo-500 font-mono">
+                            <input type="url" id="site-url" placeholder="https://www.tuosito.com" class="w-full bg-black/80 border border-zinc-700 text-white rounded-xl px-4 py-3.5 text-sm outline-none focus:border-indigo-500 font-mono transition">
                         </div>
                         <div>
                             <label class="block text-xs uppercase font-black tracking-widest text-zinc-300 mb-2">2. Argomento o Prodotto da Promuovere</label>
-                            <input type="text" id="site-product" placeholder="Es. Consulenza Fiscale, Nuovo Corso, Software..." class="w-full bg-black border border-zinc-700 text-white rounded-xl px-4 py-3.5 text-sm outline-none focus:border-indigo-500 font-bold">
+                            <input type="text" id="site-product" placeholder="Es. Consulenza Fiscale, Nuovo Corso, Software..." class="w-full bg-black/80 border border-zinc-700 text-white rounded-xl px-4 py-3.5 text-sm outline-none focus:border-indigo-500 font-bold transition">
                         </div>
                         
                         <button onclick="generateCarouselDemo()" id="m-submit-btn" class="w-full bg-gradient-to-r from-indigo-500 to-violet-600 hover:from-indigo-400 hover:to-violet-500 text-white font-black py-4 rounded-xl text-xs uppercase tracking-widest transition active:scale-95 shadow-lg shadow-indigo-500/25 cursor-pointer">
@@ -116,18 +170,18 @@
         </section>
 
         <!-- CONFRONTO: CANVA VS SOCIALENGINE -->
-        <section class="py-24 px-6 border-t border-white/5 bg-zinc-950/40">
+        <section class="py-24 px-6 border-t border-white/5 bg-zinc-950/60 backdrop-blur-xl">
             <div class="max-w-5xl mx-auto">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight font-display">Perché il metodo tradizionale ti fa perdere tempo</h2>
                 </div>
                 <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-red-950/20 border border-red-500/20 p-8 rounded-3xl space-y-4">
+                    <div class="bg-red-950/20 border border-red-500/20 p-8 rounded-3xl space-y-4 backdrop-blur-md">
                         <span class="text-xs font-bold text-red-400 uppercase tracking-widest block">✕ Il Metodo Manuale (Canva)</span>
                         <h4 class="text-lg font-bold text-white">4 ore perse per un solo post</h4>
                         <p class="text-sm text-zinc-400 leading-relaxed">Cercare template, allineare i font, adattare i colori, scrivere testi accattivanti e ridimensionare immagini. Risultato: pubblichi poco e senza costanza.</p>
                     </div>
-                    <div class="bg-emerald-950/20 border-2 border-indigo-500/40 p-8 rounded-3xl space-y-4 shadow-xl shadow-indigo-500/10">
+                    <div class="bg-emerald-950/20 border-2 border-indigo-500/40 p-8 rounded-3xl space-y-4 shadow-xl shadow-indigo-500/10 backdrop-blur-md">
                         <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest block">✓ Con SocialEngine AI</span>
                         <h4 class="text-lg font-bold text-white">40 secondi e 5 slide pronte</h4>
                         <p class="text-sm text-zinc-200 leading-relaxed">Incolli il link: l&apos;AI legge il sito, estrae i colori esatti del tuo logo, applica la struttura persuasiva e crea il file scaricabile in alta definizione.</p>
@@ -137,14 +191,14 @@
         </section>
 
         <!-- PREZZI STRIPE ON-THE-FLY -->
-        <section id="prezzi" class="py-24 px-6 border-t border-white/5">
+        <section id="prezzi" class="py-24 px-6 border-t border-white/5 relative">
             <div class="max-w-6xl mx-auto text-center">
                 <h2 class="text-3xl md:text-5xl font-black mb-4 uppercase text-white font-display">Pacchetti Crediti a Consumo</h2>
                 <p class="text-zinc-400 text-sm max-w-xl mx-auto mb-16">Nessun abbonamento mensile vincolante. Compri i crediti una volta e li usi quando vuoi: non scadono mai.</p>
 
                 <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto text-left items-stretch">
                     <!-- Starter -->
-                    <div class="glass-panel p-8 rounded-3xl flex flex-col justify-between border border-white/10 hover:border-white/20 transition">
+                    <div class="glass-panel p-8 rounded-3xl flex flex-col justify-between border border-white/10 hover:border-white/20 transition hover:translate-y-[-2px]">
                         <div>
                             <h3 class="text-lg font-bold text-white">Starter Pack</h3>
                             <div class="my-4 flex items-baseline gap-2">
@@ -162,8 +216,8 @@
                     </div>
 
                     <!-- Pro (Decoy Highlight) -->
-                    <div class="bg-gradient-to-b from-indigo-950/40 via-zinc-900 to-black p-8 rounded-3xl flex flex-col justify-between relative border-2 border-indigo-500 shadow-2xl shadow-indigo-500/20 transform md:-translate-y-2">
-                        <div class="absolute -top-3.5 right-6 bg-gradient-to-r from-indigo-400 to-violet-500 text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-wider">PIÙ SCELTO (+40% BONUS)</div>
+                    <div class="bg-gradient-to-b from-indigo-950/60 via-zinc-900/90 to-black/95 p-8 rounded-3xl flex flex-col justify-between relative border-2 border-indigo-500 shadow-2xl shadow-indigo-500/25 transform md:-translate-y-2 backdrop-blur-xl">
+                        <div class="absolute -top-3.5 right-6 bg-gradient-to-r from-indigo-400 to-violet-500 text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-wider shadow-md">PIÙ SCELTO (+40% BONUS)</div>
                         <div>
                             <h3 class="text-lg font-bold text-indigo-400">Pro Pack</h3>
                             <div class="my-4 flex items-baseline gap-2">
@@ -182,7 +236,7 @@
                     </div>
 
                     <!-- Agency -->
-                    <div class="glass-panel p-8 rounded-3xl flex flex-col justify-between border border-white/10 hover:border-white/20 transition">
+                    <div class="glass-panel p-8 rounded-3xl flex flex-col justify-between border border-white/10 hover:border-white/20 transition hover:translate-y-[-2px]">
                         <div>
                             <h3 class="text-lg font-bold text-white">Agency Pack</h3>
                             <div class="my-4 flex items-baseline gap-2">
@@ -210,7 +264,7 @@
             </div>
 
             <div class="space-y-4 text-sm">
-                <div class="glass-panel p-6 rounded-2xl border border-white/10 cursor-pointer" onclick="toggleFaq(1)">
+                <div class="glass-panel p-6 rounded-2xl border border-white/10 cursor-pointer transition hover:border-white/20" onclick="toggleFaq(1)">
                     <div class="flex justify-between items-center font-bold text-white">
                         <span>1. Come fa l&apos;AI a conoscere i colori del mio brand?</span>
                         <span id="faq-icon-1" class="text-indigo-400 transition-transform">▼</span>
@@ -218,7 +272,7 @@
                     <p id="faq-content-1" class="hidden text-zinc-400 mt-3 leading-relaxed">Il nostro scraper analizza il codice CSS del tuo sito web, isola la palette principale e i colori d&apos;accento del tuo logo, applicandoli in automatico alle slide.</p>
                 </div>
 
-                <div class="glass-panel p-6 rounded-2xl border border-white/10 cursor-pointer" onclick="toggleFaq(2)">
+                <div class="glass-panel p-6 rounded-2xl border border-white/10 cursor-pointer transition hover:border-white/20" onclick="toggleFaq(2)">
                     <div class="flex justify-between items-center font-bold text-white">
                         <span>2. In quali formati posso scaricare i caroselli?</span>
                         <span id="faq-icon-2" class="text-indigo-400 transition-transform">▼</span>
@@ -226,7 +280,7 @@
                     <p id="faq-content-2" class="hidden text-zinc-400 mt-3 leading-relaxed">Puoi scaricare il pacchetto di immagini PNG/JPG per Instagram e Facebook, oppure il file multipagina PDF ottimizzato per i caroselli scorrevoli di LinkedIn.</p>
                 </div>
 
-                <div class="glass-panel p-6 rounded-2xl border border-white/10 cursor-pointer" onclick="toggleFaq(3)">
+                <div class="glass-panel p-6 rounded-2xl border border-white/10 cursor-pointer transition hover:border-white/20" onclick="toggleFaq(3)">
                     <div class="flex justify-between items-center font-bold text-white">
                         <span>3. I crediti acquistati hanno una data di scadenza?</span>
                         <span id="faq-icon-3" class="text-indigo-400 transition-transform">▼</span>
@@ -234,7 +288,7 @@
                     <p id="faq-content-3" class="hidden text-zinc-400 mt-3 leading-relaxed">No. I crediti rimangono per sempre sul tuo account e vengono scalati solo quando generi un carosello definitivo.</p>
                 </div>
 
-                <div class="glass-panel p-6 rounded-2xl border border-white/10 cursor-pointer" onclick="toggleFaq(4)">
+                <div class="glass-panel p-6 rounded-2xl border border-white/10 cursor-pointer transition hover:border-white/20" onclick="toggleFaq(4)">
                     <div class="flex justify-between items-center font-bold text-white">
                         <span>4. L&apos;AI scrive anche i testi o devo fornirli io?</span>
                         <span id="faq-icon-4" class="text-indigo-400 transition-transform">▼</span>
@@ -242,7 +296,7 @@
                     <p id="faq-content-4" class="hidden text-zinc-400 mt-3 leading-relaxed">L&apos;AI scrive tutto da zero: titolo della copertina (Hook), le 3 slide centrali con la spiegazione e la slide finale con la Call to Action per guidare gli utenti sul tuo sito.</p>
                 </div>
 
-                <div class="glass-panel p-6 rounded-2xl border border-white/10 cursor-pointer" onclick="toggleFaq(5)">
+                <div class="glass-panel p-6 rounded-2xl border border-white/10 cursor-pointer transition hover:border-white/20" onclick="toggleFaq(5)">
                     <div class="flex justify-between items-center font-bold text-white">
                         <span>5. Posso inserire il mio logo aziendale sulle slide?</span>
                         <span id="faq-icon-5" class="text-indigo-400 transition-transform">▼</span>
@@ -250,7 +304,7 @@
                     <p id="faq-content-5" class="hidden text-zinc-400 mt-3 leading-relaxed">Sì, a partire dal pacchetto PRO il logo della tua attività viene inserito automaticamente nell&apos;intestazione di tutte le slide.</p>
                 </div>
 
-                <div class="glass-panel p-6 rounded-2xl border border-white/10 cursor-pointer" onclick="toggleFaq(6)">
+                <div class="glass-panel p-6 rounded-2xl border border-white/10 cursor-pointer transition hover:border-white/20" onclick="toggleFaq(6)">
                     <div class="flex justify-between items-center font-bold text-white">
                         <span>6. Quanto tempo richiede l&apos;elaborazione di un post?</span>
                         <span id="faq-icon-6" class="text-indigo-400 transition-transform">▼</span>
@@ -258,7 +312,7 @@
                     <p id="faq-content-6" class="hidden text-zinc-400 mt-3 leading-relaxed">Circa 30-45 secondi. Il server analizza l&apos;URL, scrive il copy persuasivo e fonde la grafica vettoriale in alta risoluzione.</p>
                 </div>
 
-                <div class="glass-panel p-6 rounded-2xl border border-white/10 cursor-pointer" onclick="toggleFaq(7)">
+                <div class="glass-panel p-6 rounded-2xl border border-white/10 cursor-pointer transition hover:border-white/20" onclick="toggleFaq(7)">
                     <div class="flex justify-between items-center font-bold text-white">
                         <span>7. Funziona anche per e-commerce e negozi online?</span>
                         <span id="faq-icon-7" class="text-indigo-400 transition-transform">▼</span>
@@ -266,7 +320,7 @@
                     <p id="faq-content-7" class="hidden text-zinc-400 mt-3 leading-relaxed">Certamente. Ti basta incollare la scheda prodotto di Shopify o WooCommerce per generare un carosello che evidenzia vantaggi, recensioni e caratteristiche.</p>
                 </div>
 
-                <div class="glass-panel p-6 rounded-2xl border border-white/10 cursor-pointer" onclick="toggleFaq(8)">
+                <div class="glass-panel p-6 rounded-2xl border border-white/10 cursor-pointer transition hover:border-white/20" onclick="toggleFaq(8)">
                     <div class="flex justify-between items-center font-bold text-white">
                         <span>8. Perché i caroselli generano più interazioni rispetto ai post normali?</span>
                         <span id="faq-icon-8" class="text-indigo-400 transition-transform">▼</span>
@@ -274,7 +328,7 @@
                     <p id="faq-content-8" class="hidden text-zinc-400 mt-3 leading-relaxed">L&apos;algoritmo di LinkedIn e Instagram premia il tempo di permanenza sul post (dwell time). Gli utenti scorrono più slide e l&apos;algoritmo mostra il contenuto a un pubblico più vasto.</p>
                 </div>
 
-                <div class="glass-panel p-6 rounded-2xl border border-white/10 cursor-pointer" onclick="toggleFaq(9)">
+                <div class="glass-panel p-6 rounded-2xl border border-white/10 cursor-pointer transition hover:border-white/20" onclick="toggleFaq(9)">
                     <div class="flex justify-between items-center font-bold text-white">
                         <span>9. Come ricevo i file dopo l&apos;acquisto?</span>
                         <span id="faq-icon-9" class="text-indigo-400 transition-transform">▼</span>
@@ -282,7 +336,7 @@
                     <p id="faq-content-9" class="hidden text-zinc-400 mt-3 leading-relaxed">Il link per scaricare il pacchetto completo delle slide viene mostrato a schermo e inviato istantaneamente alla tua email.</p>
                 </div>
 
-                <div class="glass-panel p-6 rounded-2xl border border-white/10 cursor-pointer" onclick="toggleFaq(10)">
+                <div class="glass-panel p-6 rounded-2xl border border-white/10 cursor-pointer transition hover:border-white/20" onclick="toggleFaq(10)">
                     <div class="flex justify-between items-center font-bold text-white">
                         <span>10. Devo installare estensioni o programmi sul PC?</span>
                         <span id="faq-icon-10" class="text-indigo-400 transition-transform">▼</span>
@@ -307,10 +361,13 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="border-t border-white/10 bg-black py-16 px-6 text-xs text-zinc-500">
+    <footer class="border-t border-white/10 bg-black py-16 px-6 text-xs text-zinc-500 relative z-10">
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 text-center md:text-left">
             <div class="md:col-span-2 space-y-3">
-                <span class="font-display font-black text-white text-base uppercase tracking-wider">SocialEngine AI</span>
+                <div class="flex items-center justify-center md:justify-start gap-2.5">
+                    <img src="./logo_social.png" alt="SocialEngine AI Logo" class="w-6 h-6 object-contain rounded opacity-90">
+                    <span class="font-display font-black text-white text-base uppercase tracking-wider">SocialEngine AI</span>
+                </div>
                 <p class="text-zinc-400 text-xs max-w-sm">Ingegneria dei Sistemi Autonomi. Semplifichiamo il social media marketing con l&apos;AI generativa.</p>
                 <p>© 2026 RM Studio. <a href="https://rmstudio.app/privacy.html" class="underline hover:text-indigo-400">Privacy Policy</a></p>
             </div>
